@@ -4,18 +4,17 @@ export const Footer = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pr-10">
         <div className="pl-10">
           <h3 className="font-bold mb-4">CONTACTS</h3>
-          <p>Piazza indipendenza 8a, - 50127 Florence, Italy</p>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <p>Address of the center's representative office: 3rd floor, block B, No. 668 Hengfeng Road, Jing'an District, Shanghai, China</p>
-          <p>Phone: +39 3776509887</p>
-          <p>Fiscal Code: 82147022180</p>
+          <p>联合国教科文意大利青年教育研究中心</p>
+          <p>地址：独立广场8a，-50127佛罗伦萨，意大利</p>
+          <p> </p>
+          <p>联合国教科文意大利中心中国联络处</p>
+          <p>地址：上海市静安区天目西路99号丽丰天际中心1005</p>
         </div>
         <div className="pl-10">
           <h3 className="font-bold mb-4">LINK</h3>
-          <p>UN (United Nations)</p>
-          <p>UNESCO (United Nations Educational, Scientific and Cultural Organization)</p>
-          <p>Centro Di Ricerca SullEducazione Dei Giovani Per LUNESCO</p>
-          <p>ILS LEDA (International Links and Services for Local Economic Development Agencies)</p>
+          <p>联合国KIP国际学院 https://kipschool.org/</p>
+          <p>联合国地方经济发展局 http://www.ilsleda.org/</p>
+          <p>联合国南南合作办公室 https://unsouthsouth.org/</p>
         </div>
       </div>
     </section>
