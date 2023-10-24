@@ -2,6 +2,7 @@ import { HeroInHomePage } from "@/components/Hero"
 import { CardComp, KnowMoreButton } from "@/components/card"
 import { CenterContainer } from "@/components/container"
 import { Banner } from "@/components/main/banner"
+import { Footer } from "@/components/main/footer";
 import { AllNews } from "@/components/news"
 import { Separator } from "@/components/ui/separator"
 import { assets } from "@/config/assets"
@@ -65,6 +66,7 @@ export default function Page() {
           </>
         ))}
       </CenterContainer>
+      <Footer />
     </>
   )
 }
