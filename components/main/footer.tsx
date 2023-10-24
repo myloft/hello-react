@@ -5,6 +5,7 @@ export const Footer = () => {
         <div className="pl-10">
           <h3 className="font-bold mb-4">CONTACTS</h3>
           <p>Piazza indipendenza 8a, - 50127 Florence, Italy</p>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <p>Address of the center's representative office: 3rd floor, block B, No. 668 Hengfeng Road, Jing'an District, Shanghai, China</p>
           <p>Phone: +39 3776509887</p>
           <p>Fiscal Code: 82147022180</p>

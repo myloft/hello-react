@@ -29,6 +29,7 @@ const HorizontalTabs = () => (
           <CardHeader>
             <CardTitle>Account</CardTitle>
             <CardDescription>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               Make changes to your account here. Click save when you're done.
             </CardDescription>
           </CardHeader>
@@ -52,6 +53,7 @@ const HorizontalTabs = () => (
           <CardHeader>
             <CardTitle>Password</CardTitle>
             <CardDescription>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               Change your password here. After saving, you'll be logged out.
             </CardDescription>
           </CardHeader>
@@ -84,6 +86,7 @@ const VerticalTabs = () => (
           <CardHeader>
             <CardTitle>Account</CardTitle>
             <CardDescription>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               Make changes to your account here. Click save when you're done.
             </CardDescription>
           </CardHeader>
@@ -107,6 +110,7 @@ const VerticalTabs = () => (
           <CardHeader>
             <CardTitle>Password</CardTitle>
             <CardDescription>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               Change your password here. After saving, you'll be logged out.
             </CardDescription>
           </CardHeader>
