@@ -1,16 +1,10 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import {
   Tabs,
   TabsContent,
@@ -18,7 +12,6 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import ReactMarkdown from 'react-markdown';
-// import react from 'react'
 
 const VerticalTabs = () => (
   <Tabs defaultValue="one" className="flex gap-2">

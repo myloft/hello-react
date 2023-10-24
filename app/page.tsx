@@ -41,8 +41,8 @@ export default function Page() {
           // 4. 新闻
           () => (
             <section id={"content-4"} className={"grid grid-cols-1 gap-4"}>
-              <Image src={assets.homePage.News.title} alt={""} className={"w-fit"} />
-              <Image src={assets.homePage.News.subTitle} alt={""} className={"w-fit"} />
+              <Image fill={true} src={assets.homePage.News.title} alt={""} className={"w-fit"} />
+              <Image fill={true} src={assets.homePage.News.subTitle} alt={""} className={"w-fit"} />
               <AllNews />
             </section>
           ),
