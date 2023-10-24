@@ -1,17 +1,8 @@
 "use client"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
-import ReactMarkdown from 'react-markdown';
+
+import { ReactMarkdownNoSSr } from "@/components/react-markdown-no-ssr"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const VerticalTabs = () => (
   <Tabs defaultValue="two" className="flex gap-2">
@@ -26,7 +17,7 @@ const VerticalTabs = () => (
           <CardTitle>联合国KIP国际学院</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <ReactMarkdown>{KIP}</ReactMarkdown>
+          <ReactMarkdownNoSSr>{KIP}</ReactMarkdownNoSSr>
         </CardContent>
       </Card>
     </TabsContent>
@@ -36,7 +27,7 @@ const VerticalTabs = () => (
           <CardTitle>联合国地方经济发展局</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <ReactMarkdown>{LEDA}</ReactMarkdown>
+          <ReactMarkdownNoSSr>{LEDA}</ReactMarkdownNoSSr>
         </CardContent>
       </Card>
     </TabsContent>
@@ -46,7 +37,7 @@ const VerticalTabs = () => (
           <CardTitle>联合国南南合作发展与创新处</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <ReactMarkdown>{IDEASS}</ReactMarkdown>
+          <ReactMarkdownNoSSr>{IDEASS}</ReactMarkdownNoSSr>
         </CardContent>
       </Card>
     </TabsContent>
@@ -55,8 +46,8 @@ const VerticalTabs = () => (
 
 export default function TabsDemo() {
   return (
-    <div className={'flex flex-cols sm:flex-rows gap-2'}>
-      <VerticalTabs/>
+    <div className={"flex flex-cols sm:flex-rows gap-2"}>
+      <VerticalTabs />
     </div>
   )
 }
@@ -81,7 +72,7 @@ KIP 国际学院提倡基于当地社区的积极作用、增强当地自然、�
 ### 发展沿革
 
 KIP 国际学院由科学委员会指导，主席为埃德加·莫兰 (Edgar Morin)。该科学委员会于 2004 年 KIP 学院成立之前，由教科文组织与联合国开发计划署、联合国妇女发展基金和联合国项目事务厅合作创建，并于 2010 年与国际劳工组织、联合国环境规划署和世界卫生组织建立了联系。经过一段时间的磋商后，科学委员会建议创建 KIP 国际学校，此后经过以下大会讨论并建议后最终成立：联合国大会主席米格爾·德斯科托·布羅克曼（Miguel d'Escoto） 于 9 月 9 日，2009年；2009 年 10 月 14 日，法国国民议会在巴黎举行埃德加·莫兰 (Edgar Morin) 举行的会议；2010 年 5 月 4 日在布鲁塞尔与欧洲议会副主席和议员会面；2010 年 6 月 4 日开罗领土知识论坛；2010 年 12 月 4 日至 5 日在达喀尔举行的权力下放合作国际会议期间；2011年1月13日至14日在地拉那举行的权力下放合作和欧洲一体化国际会议期间；2011 年 3 月 17 日至 18 日在巴黎举行的经合组织发展援助委员会贫困小组全体会议上。
-`;
+`
 
 const LEDA = `
 于 1992 年在国际劳工组织、联合国开发计划署和联合国项目事务厅的合作下设立，提供与当地经济发展进程的治理、战略和实施相关的技术援助。特别是，它支持地方经济发展机构（LEDA）的创建、运作和联网。地方经济发展机构 LEDAs 是领土服务，由当地公共、私人和非营利组织协会管理，其使命是支持企业、增强当地资源和能力以及将弱势群体纳入经济活动。超过60 个 LEDA 在 18 个国家/地区运营，2011年并入联合国KIP国际学院。
@@ -93,7 +84,7 @@ ILS LEDA利用主要在联合国（开发计划署、劳工组织、项目厅、
 ILS LEDA在其活动中涉及多个合作伙伴，例如：大学，卓越中心和知名国际专家。
 
 ILS LEDA参与KIP国际学校的活动，支持实施全面发展战略项目，组织知识系统化和传播讲习班，设计和开展培训课程和大学教育。所有这些活动都是应国家和地方政府及其他伙伴的要求与他们合作开展的，旨在促进经济发展进程，使一个领土的人民能够通过增加包容性和可持续的就业和收入来改善集体和个人福利。
-`;
+`
 
 const IDEASS = `IDEASS 于 2001 年与国际劳工组织、联合国开发计划署和联合国项目事务厅合作设立，旨在识别和传播有助于高质量领土发展的创新。要了解 IDEASS 推动的创新及其当前活动，请访问网站 www.ideassonline.org 。该网站吸引了来自 190 多个国家的访客，是 KIP 国际学校永久文化活动的重要工具。2011年并入联合国KIP国际学院。
 `
