@@ -2,6 +2,7 @@ import { HeroInHomePage } from "@/components/Hero"
 import { CardComp, KnowMoreButton } from "@/components/card"
 import { CenterContainer } from "@/components/container"
 import { Banner } from "@/components/main/banner"
+import { Footer } from "@/components/main/footer";
 import { AllNews } from "@/components/news"
 import { Separator } from "@/components/ui/separator"
 import { assets } from "@/config/assets"
@@ -40,8 +41,8 @@ export default function Page() {
           // 4. 新闻
           () => (
             <section id={"content-4"} className={"grid grid-cols-1 gap-4"}>
-              <Image src={assets.homePage.News.title} alt={""} className={"w-fit"} />
-              <Image src={assets.homePage.News.subTitle} alt={""} className={"w-fit"} />
+              <Image fill={true} src={assets.homePage.News.title} alt={""} className={"w-fit"} />
+              <Image fill={true} src={assets.homePage.News.subTitle} alt={""} className={"w-fit"} />
               <AllNews />
             </section>
           ),
@@ -65,6 +66,7 @@ export default function Page() {
           </>
         ))}
       </CenterContainer>
+      <Footer />
     </>
   )
 }
