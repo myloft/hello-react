@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <section className="bg-blue-500 text-white p-4 flex justify-end">
-      <div className="grid grid-cols-2 gap-8 pr-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pr-10">
         <div className="pl-10">
           <h3 className="font-bold mb-4">CONTACTS</h3>
           <p>Piazza indipendenza 8a, - 50127 Florence, Italy</p>
@@ -19,5 +19,5 @@ export const Footer = () => {
         </div>
       </div>
     </section>
-  );
+  )
 }

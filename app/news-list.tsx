@@ -11,16 +11,19 @@ export const NewsList = ({
   ...props
 }: { limit?: number; hasMore?: boolean } & HTMLAttributes<HTMLDivElement>) => {
   const news = [
-    "/core/子页面/新闻/t米兰.jpg",
-    "/core/子页面/新闻/t美国重返教科文.png",
-    "/core/子页面/新闻/t高级蓝领.jpg",
-    "/core/子页面/新闻/卓越主题.png",
+    { image: "/core/子页面/新闻/t米兰.jpg", href: "", text: "米兰" },
+    { image: "/core/子页面/新闻/t美国重返教科文.png", href: "", text: "美国重返教科文" },
+    { image: "/core/子页面/新闻/t高级蓝领.jpg", href: "", text: "高级蓝领" },
+    { image: "/core/子页面/新闻/卓越主题.png", href: "", text: "卓越主题" },
   ].slice(0, limit)
 
   return (
     <div className={clsx("w-full gap-2 grid grid-cols-1 sm:grid-cols-3", className)} {...props}>
-      {news.map((item) => (
-        <Image src={item} alt={""} width={320} height={200} key={item} />
+      {news.map((item, index) => (
+        <Link href={`/news/${index + 1}`} className={"flex flex-col gap-2 items-center"}>
+          <Image src={item.image} alt={""} width={320} height={200} key={item.image} />
+          <div className={""}>{item.text}</div>
+        </Link>
       ))}
 
       {hasMore && (

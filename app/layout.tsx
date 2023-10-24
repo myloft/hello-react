@@ -41,10 +41,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
               <SiteHeader />
               <div className="w-full flex-1">{children}</div>
 
-              <div className={'w-full bg-primary'}>
-
-              </div>
-
+              <div className={"w-full bg-primary"}></div>
             </div>
             <TailwindIndicator />
           </ThemeProvider>
