@@ -1,6 +1,6 @@
 "use client"
 
-import { AllNews } from "@/components/news"
+import { NewsList } from "@/app/news-list"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { assets } from "@/config/assets"
 
@@ -12,9 +12,9 @@ export default function News() {
           <TabsTrigger value={tab.name}>{tab.name}</TabsTrigger>
         ))}
       </TabsList>
-      <TabsContent value={assets.newsPage.children[0].name}>
+      <TabsContent value={assets.newsPage.children[0].name} className={"flex flex-col gap-2"}>
         <h2 className={"text-xl p-4 font-black"}>新闻</h2>
-        <AllNews />
+        <NewsList />
       </TabsContent>
     </Tabs>
   )

@@ -1,5 +1,12 @@
 import teachers from "./teachers.json"
 import Logo from "~/cregu_logo（页面顶部左上角）.png"
+import TestImage from "~/子页面/新闻/test.jpg"
+// import N1Image from "~/子页面/新闻/t卓越主题.jpg"
+import N1Image from "~/子页面/新闻/t米兰.jpg"
+import N2Image from "~/子页面/新闻/t美国重返教科文.png"
+import N3Image from "~/子页面/新闻/t高级蓝领.jpg"
+// import N4Image from "~/子页面/新闻/t卓越主题.jpg"
+import N4Image from "~/子页面/新闻/卓越主题.png"
 import Nav3_Left from "~/导航 区/NEWS/二级展开/左侧简介.png"
 import Nav3_1Bg from "~/导航 区/NEWS/二级展开/机构咨询（底板）.png"
 import Nav3_1Fg from "~/导航 区/NEWS/二级展开/机构资讯.png"
@@ -57,10 +64,6 @@ import Banner2Image from "~/顶部Banner 区/02 Banner/底图02.png"
 import Banner2Text from "~/顶部Banner 区/02 Banner/联合国实习项目.png"
 import Banner3Image from "~/顶部Banner 区/03 Banner/底图03.png"
 import Banner3Text from "~/顶部Banner 区/03 Banner/模拟联合国.png"
-import N1Image from "~/子页面/新闻/t卓越主题.jpg"
-import N2Image from "~/子页面/新闻/t美国重返教科文.png"
-import N3Image from "~/子页面/新闻/t高级蓝领.jpg"
-import N4Image from "~/子页面/新闻/t卓越主题.jpg"
 
 export const assets = {
   general: {
@@ -150,13 +153,14 @@ export const assets = {
       title: Content4TImage,
       subTitle: Content4MImage,
       children: [
-        { image: Content4B1Image, text: Content4B1Text, link: "/news/1" },
-        { image: Content4B2Image, text: Content4B2Text, link: "/news/2" },
+        // { image: Content4B1Image, text: Content4B1Text, link: "/news/1" },
+        // { image: Content4B2Image, text: Content4B2Text, link: "/news/2" },
         // { image: N1Image, text: "特别关注：米兰理工大学毕业生就业率再创新高", link: "/news/1" },
         // { image: N2Image, text: "美国重返教科文", link: "/news/2" },
         // { image: N3Image, text: "通向高级蓝领的桥梁——意大利“就业导向型”本科课程", link: "/news/3" },
         // { image: N4Image, text: "卓越主题培训计划", link: "/news/4" },
-        // { image: Content4B3Image, link: "/news", hasMore: true },
+        // { image: TestImage, text: "test", link: "/news", hasMore: true },
+        { image: Content4B3Image, link: "/news", hasMore: true },
       ],
     },
     modules: {

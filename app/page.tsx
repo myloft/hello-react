@@ -1,9 +1,9 @@
+import { NewsList } from "@/app/news-list"
 import { HeroInHomePage } from "@/components/Hero"
 import { CardComp, KnowMoreButton } from "@/components/card"
 import { CenterContainer } from "@/components/container"
 import { Banner } from "@/components/main/banner"
-import { Footer } from "@/components/main/footer";
-import { AllNews } from "@/components/news"
+import { Footer } from "@/components/main/footer"
 import { Separator } from "@/components/ui/separator"
 import { assets } from "@/config/assets"
 import Image from "next/image"
@@ -43,7 +43,10 @@ export default function Page() {
             <section id={"content-4"} className={"grid grid-cols-1 gap-4"}>
               <Image src={assets.homePage.News.title} alt={""} className={"w-fit"} />
               <Image src={assets.homePage.News.subTitle} alt={""} className={"w-fit"} />
-              <AllNews />
+
+              <div className={"flex gap-2 flex-wrap"}>
+                <NewsList limit={2} hasMore />
+              </div>
             </section>
           ),
           // 5. 导师
