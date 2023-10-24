@@ -1,3 +1,3 @@
 import dynamic from "next/dynamic"
 
-export const ReactMarkdown = dynamic(() => import("react-markdown"), { ssr: false })
+export const ReactMarkdownNoSSr = dynamic(() => import("react-markdown"), { ssr: false })

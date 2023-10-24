@@ -2,7 +2,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { ITeacher } from "@/config/assets"
 import Image from "next/image"
 import Link from "next/link"
-import ReactMarkdown from "react-markdown"
+import { ReactMarkdownNoSSr } from "@/components/react-markdown-no-ssr"
 
 export const HeroInTeachersPage = ({ id, name, avatar, desc }: ITeacher) => {
   return (
@@ -20,7 +20,7 @@ export const HeroInTeachersPage = ({ id, name, avatar, desc }: ITeacher) => {
             </AspectRatio>
           </div>
           <div>
-            <ReactMarkdown>{desc}</ReactMarkdown>
+            <ReactMarkdownNoSSr>{desc}</ReactMarkdownNoSSr>
           </div>
         </div>
       </div>
