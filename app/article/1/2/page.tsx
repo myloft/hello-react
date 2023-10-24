@@ -1,3 +1,5 @@
+"use client"
+
 import { HeroInTeachersPage } from "@/components/Hero"
 import { assets } from "@/config/assets"
 

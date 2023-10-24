@@ -5,7 +5,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <article
       className={cn(
-        "mx-auto max-w-xl py-8 "
+        "mx-[15%] py-8 "
         // "prose dark:prose-invert"
       )}
     >
