@@ -35,7 +35,7 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "方向",
     cell: ({ row }) => {
-      console.log({ row })
+      // console.log({ row })
       const value = row.getValue("方向") as string
       return (
         <Link href={`/article/2/1/${row.id}`} className={"text-blue-800"}>

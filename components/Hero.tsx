@@ -3,7 +3,6 @@
 import { ReactMarkdownNoSSr } from "@/components/react-markdown-no-ssr"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { ITeacher } from "@/config/assets"
-// import ReactMarkdown from "react-markdown"
 import Image from "next/image"
 import Link from "next/link"
 

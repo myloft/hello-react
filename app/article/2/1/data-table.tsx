@@ -15,7 +15,7 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table"
-import React, { useState } from "react"
+import React, { RefObject, useRef, useState } from "react"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -46,24 +46,39 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
     },
   })
 
-  const doFilter = (event) => table.getColumn("机构")?.setFilterValue(event.target.value)
+  const refInputInstitute = useRef<HTMLInputElement>(null)
+  const refInputDirection = useRef<HTMLInputElement>(null)
+  const doFilter = (columnId: string, ref: RefObject<HTMLInputElement>) => {
+    if (!ref.current) return
+    table.getColumn(columnId)?.setFilterValue(ref.current.value)
+  }
+  const clearFilter = (columnId: string, ref: RefObject<HTMLInputElement>) => {
+    ref.current!.value = ""
+    doFilter(columnId, ref)
+  }
+  const onClear = () => {
+    clearFilter("机构", refInputInstitute)
+    clearFilter("方向", refInputDirection)
+  }
+
+  console.log("cur filter value: ")
 
   return (
     <div className="rounded-md border">
       <div className="flex items-center p-4 gap-2">
         <Label className={"shrink-0"}>机构：</Label>
         <Input
+          ref={refInputInstitute}
           placeholder="筛选机构..."
-          value={table.getColumn("机构")?.getFilterValue() as string}
-          onChange={doFilter}
+          onChange={() => doFilter("机构", refInputInstitute)}
           className="max-w-sm"
         />
 
         <Label className={"shrink-0"}>方向：</Label>
         <Input
           placeholder="筛选方向..."
-          value={table.getColumn("方向")?.getFilterValue() as string}
-          onChange={(event) => table.getColumn("方向")?.setFilterValue(event.target.value)}
+          ref={refInputDirection}
+          onChange={() => doFilter("方向", refInputDirection)}
           className="max-w-sm"
         />
 
@@ -92,16 +107,9 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
           </DropdownMenuContent>
         </DropdownMenu>
 
-        {/*<Button*/}
-        {/*  className={"shrink-0"}*/}
-        {/*  variant={"outline"}*/}
-        {/*  onClick={() => {*/}
-        {/*    // table.getColumn("方向")*/}
-        {/*    table.getColumn("方向")?.setFilterValue("")*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  清空*/}
-        {/*</Button>*/}
+        <Button className={"shrink-0"} variant={"outline"} onClick={onClear}>
+          清空
+        </Button>
       </div>
 
       {/*<div className="flex-1 text-sm text-muted-foreground">*/}
