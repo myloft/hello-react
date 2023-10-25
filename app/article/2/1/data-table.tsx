@@ -15,6 +15,7 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table"
+import { loadWebpackHook } from "next/dist/server/config-utils"
 import React, { RefObject, useRef, useState } from "react"
 
 interface DataTableProps<TData, TValue> {
@@ -46,39 +47,50 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
     },
   })
 
-  const refInputInstitute = useRef<HTMLInputElement>(null)
+  const [value, setValue] = useState("")
+
   const refInputDirection = useRef<HTMLInputElement>(null)
-  const doFilter = (columnId: string, ref: RefObject<HTMLInputElement>) => {
-    if (!ref.current) return
-    table.getColumn(columnId)?.setFilterValue(ref.current.value)
-  }
-  const clearFilter = (columnId: string, ref: RefObject<HTMLInputElement>) => {
-    ref.current!.value = ""
-    doFilter(columnId, ref)
-  }
-  const onClear = () => {
-    clearFilter("机构", refInputInstitute)
-    clearFilter("方向", refInputDirection)
+
+  const filterByRef = (value: string) => {
+    if (!refInputDirection.current) return
+    refInputDirection.current.value = value
+    table.getColumn("方向")?.setFilterValue(value)
   }
 
-  console.log("cur filter value: ")
+  const filterByState = (value: string) => {
+    setValue(value)
+    table.getColumn("方向")?.setFilterValue(value)
+  }
+
+  const clearByTable = () => {
+    table.getColumn("方向")?.setFilterValue("")
+  }
+
+  const clearByRef = () => {
+    filterByRef("")
+  }
+
+  const clearByState = () => {
+    filterByState("")
+  }
 
   return (
     <div className="rounded-md border">
       <div className="flex items-center p-4 gap-2">
-        <Label className={"shrink-0"}>机构：</Label>
+        <Label className={"shrink-0"}>方向：</Label>
         <Input
-          ref={refInputInstitute}
-          placeholder="筛选机构..."
-          onChange={() => doFilter("机构", refInputInstitute)}
+          placeholder="筛选方向（不受控 ref）..."
+          ref={refInputDirection}
+          onChange={() => filterByRef(refInputDirection.current!.value)}
           className="max-w-sm"
         />
 
-        <Label className={"shrink-0"}>方向：</Label>
         <Input
-          placeholder="筛选方向..."
-          ref={refInputDirection}
-          onChange={() => doFilter("方向", refInputDirection)}
+          placeholder="筛选方向（受控 state）..."
+          value={value}
+          onChange={(event) => {
+            filterByState(event.target.value)
+          }}
           className="max-w-sm"
         />
 
@@ -107,8 +119,14 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Button className={"shrink-0"} variant={"outline"} onClick={onClear}>
-          清空
+        <Button className={"shrink-0"} variant={"outline"} onClick={clearByRef}>
+          清空（ref）
+        </Button>
+        <Button className={"shrink-0"} variant={"outline"} onClick={clearByState}>
+          清空（state）
+        </Button>
+        <Button className={"shrink-0"} variant={"outline"} onClick={clearByTable}>
+          清空（table）
         </Button>
       </div>
 
