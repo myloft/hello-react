@@ -1,6 +1,8 @@
+import Link from "next/link"
+
 export const Footer = () => {
   return (
-    <section className="bg-blue-500 text-white p-4 flex justify-end">
+    <section className="bg-blue-500 text-white p-4 flex justify-around w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pr-10">
         <div className="pl-10">
           <h3 className="font-bold mb-4">CONTACTS</h3>
@@ -12,6 +14,7 @@ export const Footer = () => {
         </div>
         <div className="pl-10">
           <h3 className="font-bold mb-4">LINK</h3>
+          {/*<Link href={'https://kipschool.org'}>联合国KIP国际学院</Link>*/}
           <p>联合国KIP国际学院 https://kipschool.org/</p>
           <p>联合国地方经济发展局 http://www.ilsleda.org/</p>
           <p>联合国南南合作办公室 https://unsouthsouth.org/</p>

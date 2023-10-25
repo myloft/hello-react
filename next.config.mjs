@@ -8,7 +8,7 @@ const nextConfig = {
 
   reactStrictMode: true,
   experimental: {
-    esmExternals: false,
+    // esmExternals: false,
 
     // mdxRs: true, // ref: https://nextjs.org/docs/app/building-your-application/configuring/mdx
   },

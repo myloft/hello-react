@@ -1,8 +1,11 @@
+"use client"
+
+import { ReactMarkdownNoSSr } from "@/components/react-markdown-no-ssr"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { ITeacher } from "@/config/assets"
+// import ReactMarkdown from "react-markdown"
 import Image from "next/image"
 import Link from "next/link"
-import ReactMarkdown from "react-markdown"
 
 export const HeroInTeachersPage = ({ id, name, avatar, desc }: ITeacher) => {
   return (
@@ -19,8 +22,9 @@ export const HeroInTeachersPage = ({ id, name, avatar, desc }: ITeacher) => {
               <Image src={avatar} alt={""} fill sizes={"width:120px;"} />
             </AspectRatio>
           </div>
+
           <div>
-            <ReactMarkdown>{desc}</ReactMarkdown>
+            <ReactMarkdownNoSSr>{desc}</ReactMarkdownNoSSr>
           </div>
         </div>
       </div>
