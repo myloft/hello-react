@@ -1,5 +1,5 @@
 import { NewsList } from "@/app/news-list"
-import { HeroInHomePage } from "@/components/Hero"
+import {HeroInHomePage, MoreHeroes} from "@/components/Hero"
 import { CardComp, KnowMoreButton } from "@/components/card"
 import { CenterContainer } from "@/components/container"
 import { Banner } from "@/components/main/banner"
@@ -56,9 +56,10 @@ export default function Page() {
               <Image src={assets.homePage.modules.Teachers.middle} alt={""} className={"w-fit"} />
 
               <div className="w-full flex flex-wrap justify-around gap-4">
-                {assets.general.teachers.map((props) => (
+                {assets.general.teachers.slice(0, 6).map((props) => (
                   <HeroInHomePage {...props} key={props.id} />
                 ))}
+                {assets.general.teachers.length > 6 && <MoreHeroes MoreHeroes= {assets.homePage.modules.Teachers.more}/>}
               </div>
             </section>
           ),

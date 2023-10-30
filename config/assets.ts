@@ -58,6 +58,7 @@ import Teacher6Name from "~/正文05 区/导师/06（导师名）.png"
 import Teacher6Avatar from "~/正文05 区/导师/06（导师头像）.png"
 import Content5TImage from "~/正文05 区/导师展示.png"
 import Content5MImage from "~/正文05 区/我们拥有强大且专业的导师 团队更多关于导师介绍可以点击访问。.png"
+import Content5MoreHeroesImage from "~/正文05 区/更多导师.png"
 import Banner1Text from "~/顶部Banner 区/01 Banner/About us.png"
 import Banner1Image from "~/顶部Banner 区/01 Banner/底图01.png"
 import Banner2Image from "~/顶部Banner 区/02 Banner/底图02.png"
@@ -195,6 +196,7 @@ export const assets = {
       Teachers: {
         top: Content5TImage,
         middle: Content5MImage,
+        more: Content5MoreHeroesImage,
       },
     },
   },

@@ -42,3 +42,16 @@ export const HeroInHomePage = ({ avatar, name, id }: ITeacher) => {
     </Link>
   )
 }
+
+export const MoreHeroes = ({MoreHeroes}) => {
+  return (
+    <Link className={"flex flex-col gap-2 w-[160px] relative"} href={`/article/1/2`}>
+      <AspectRatio ratio={3 / 4}>
+        <Image src={MoreHeroes} alt="More Teachers" fill sizes={"width:160px;"} />
+      </AspectRatio>
+      <span className={"absolute inset-0 top-20 w-full h-full flex items-start justify-center text-white font-medium text-[24px]"}>
+            更多导师
+      </span>
+    </Link>
+  )
+}
